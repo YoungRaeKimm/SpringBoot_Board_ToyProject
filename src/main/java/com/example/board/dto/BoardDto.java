@@ -16,7 +16,12 @@ public class BoardDto {
     private LocalDateTime modifiedDate;
 
     public Board toEntity() {
-        Board build = new Board(id, author, title, content);
+        Board build = Board.builder()
+                .id(id)
+                .author(author)
+                .title(title)
+                .content(content)
+                .build();
         return build;
     }
 
